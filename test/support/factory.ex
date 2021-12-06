@@ -3,19 +3,29 @@ defmodule Exmeal.Factory do
 
   alias Exmeal.{Meal, User}
 
+  @date DateTime.new(
+          ~D[2001-05-02],
+          ~T[16:30:00],
+          "Etc/UTC"
+        )
+
   def meals_params_factory do
+    {:ok, date} = @date
+
     %{
       description: "Banana",
-      date: "2001-05-02",
+      date: date,
       calories: "20",
       user_id: "388fccf4-f3bb-4822-9817-973a62158d20"
     }
   end
 
   def meal_factory do
+    {:ok, date} = @date
+
     %Meal{
       description: "banana",
-      date: "2001-05-02",
+      date: date,
       calories: "2",
       user_id: "388fccf4-f3bb-4822-9817-973a62158d20",
       id: "69961117-d966-4e2f-ac55-476d4f78ddfa"

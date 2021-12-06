@@ -26,7 +26,11 @@ defmodule Exmeal.Users.GetTest do
       id = "a6ef9b39-d638-4835-9ad7-dbe48d1257eb"
       response = Exmeal.get_user_by_id(id)
 
-      assert {:error, %Exmeal.Error{result: "User not found", status: :not_found}} = response
+      assert {:error,
+              %Exmeal.Error{
+                result: "User not found!",
+                status: :not_found
+              }} = response
     end
   end
 end

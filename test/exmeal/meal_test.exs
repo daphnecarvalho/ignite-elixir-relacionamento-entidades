@@ -7,6 +7,12 @@ defmodule Exmeal.MealTest do
 
   alias Exmeal.Meal
 
+  @date DateTime.new(
+          ~D[2001-05-02],
+          ~T[16:30:00],
+          "Etc/UTC"
+        )
+
   describe "changeset/1" do
     test "when all params are valid, returns a valid changeset" do
       user_params = build(:users_params)
@@ -15,13 +21,15 @@ defmodule Exmeal.MealTest do
 
       response =
         :meals_params
-        |>  build()
+        |> build()
         |> Meal.changeset()
+
+      {:ok, _date} = @date
 
       assert %Changeset{
                changes: %{
                  description: "Banana",
-                 date: ~D[2001-05-02],
+                 date: _date,
                  calories: 20,
                  user_id: _user_id
                },

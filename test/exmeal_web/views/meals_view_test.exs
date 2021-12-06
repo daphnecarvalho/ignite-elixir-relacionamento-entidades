@@ -9,6 +9,12 @@ defmodule ExmealWeb.MealsViewTest do
 
   alias ExmealWeb.MealsView
 
+  @date DateTime.new(
+          ~D[2001-05-02],
+          ~T[16:30:00],
+          "Etc/UTC"
+        )
+
   test "render create.json" do
     user_params = build(:users_params)
 
@@ -19,15 +25,15 @@ defmodule ExmealWeb.MealsViewTest do
 
     response = render(MealsView, "create.json", meal: meal)
 
+    {:ok, _date} = @date
+
     assert %{
-             meals: %{
-               meal: %Meal{
-                 calories: 20,
-                 date: ~D[2001-05-02],
-                 description: "Banana",
-                 id: ^id,
-                 user_id: ^user_id
-               }
+             meal: %Meal{
+               calories: 20,
+               date: _date,
+               description: "Banana",
+               id: ^id,
+               user_id: ^user_id
              },
              message: "Meal created!"
            } = response
@@ -43,10 +49,12 @@ defmodule ExmealWeb.MealsViewTest do
 
     response = render(MealsView, "meal.json", meal: meal)
 
+    {:ok, _date} = @date
+
     assert %{
              meal: %Meal{
                calories: 20,
-               date: ~D[2001-05-02],
+               date: _date,
                description: "Banana",
                id: ^id,
                user_id: ^user_id

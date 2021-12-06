@@ -5,7 +5,13 @@ defmodule Exmeal.Meals.CreateTest do
 
   alias Exmeal.{Meal, User}
 
-  describe "Create Meal" do
+  @date DateTime.new(
+          ~D[2001-05-02],
+          ~T[16:30:00],
+          "Etc/UTC"
+        )
+
+  describe("Create Meal") do
     test "when all params are valid, returns the meal" do
       user_params = build(:users_params)
 
@@ -15,9 +21,11 @@ defmodule Exmeal.Meals.CreateTest do
 
       {:ok, %Meal{id: id} = response} = Exmeal.create_meal(params)
 
+      {:ok, _date} = @date
+
       assert %Exmeal.Meal{
                calories: 20,
-               date: ~D[2001-05-02],
+               date: _date,
                description: "Banana",
                id: ^id,
                user_id: ^user_id

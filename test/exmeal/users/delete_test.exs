@@ -26,7 +26,11 @@ defmodule Exmeal.Users.DeleteTest do
       id = "a6ef9b39-d638-4835-9ad7-dbe48d1257eb"
       response = Exmeal.delete_user(id)
 
-      assert {:error, %Exmeal.Error{result: "User not found", status: :not_found}} = response
+      assert {:error,
+              %Exmeal.Error{
+                result: "User not found!",
+                status: :not_found
+              }} = response
     end
   end
 end

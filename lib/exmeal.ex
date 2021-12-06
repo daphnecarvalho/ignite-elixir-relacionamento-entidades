@@ -11,11 +11,13 @@ defmodule Exmeal do
 
   defdelegate create_meal(params), to: CreateMeal, as: :call
   defdelegate delete_meal(params), to: DeleteMeal, as: :call
+  defdelegate get_all_meals(), to: GetMeal, as: :all
   defdelegate get_meal_by_id(params), to: GetMeal, as: :by_id
   defdelegate update_meal(params), to: UpdateMeal, as: :call
 
   defdelegate create_user(params), to: CreateUser, as: :call
   defdelegate delete_user(params), to: DeleteUser, as: :call
+  defdelegate get_all_users(), to: GetUser, as: :all
   defdelegate get_user_by_id(params), to: GetUser, as: :by_id
   defdelegate update_user(params), to: UpdateUser, as: :call
 end

@@ -5,6 +5,12 @@ defmodule Exmeal.MealsControllerTest do
 
   alias Exmeal.{Meal, User}
 
+  @date DateTime.new(
+          ~D[2001-05-02],
+          ~T[16:30:00],
+          "Etc/UTC"
+        )
+
   describe "create/2" do
     test "when all params are valid, creates a meal", %{conn: conn} do
       user_params = build(:users_params)
@@ -18,17 +24,17 @@ defmodule Exmeal.MealsControllerTest do
         |> post(Routes.meals_path(conn, :create, params))
         |> json_response(:created)
 
-        %{"meals" => %{"meal" => %{"id" => id}}} = response
+      %{"meal" => %{"id" => id}} = response
+
+      {:ok, _date} = @date
 
       assert %{
-               "meals" => %{
-                 "meal" => %{
-                   "calories" => 20,
-                   "date" => "2001-05-02",
-                   "description" => "Banana",
-                   "id" => ^id,
-                   "user_id" => ^user_id
-                 }
+               "meal" => %{
+                 "calories" => 20,
+                 "date" => _date,
+                 "description" => "Banana",
+                 "id" => ^id,
+                 "user_id" => ^user_id
                },
                "message" => "Meal created!"
              } = response
@@ -81,7 +87,7 @@ defmodule Exmeal.MealsControllerTest do
         |> json_response(:not_found)
 
       assert %{
-               "message" => "Meal not found"
+               "message" => "Meal not found!"
              } = response
     end
   end
@@ -101,10 +107,12 @@ defmodule Exmeal.MealsControllerTest do
         |> put(Routes.meals_path(conn, :update, id))
         |> json_response(:ok)
 
+      {:ok, _date} = @date
+
       assert %{
                "meal" => %{
                  "calories" => 20,
-                 "date" => "2001-05-02",
+                 "date" => _date,
                  "description" => "Banana",
                  "id" => ^id,
                  "user_id" => ^user_id
@@ -120,7 +128,7 @@ defmodule Exmeal.MealsControllerTest do
         |> put(Routes.meals_path(conn, :update, id))
         |> json_response(:not_found)
 
-      assert %{"message" => "Meal not found"} = response
+      assert %{"message" => "Meal not found!"} = response
     end
   end
 
@@ -139,10 +147,12 @@ defmodule Exmeal.MealsControllerTest do
         |> get(Routes.meals_path(conn, :show, id))
         |> json_response(:ok)
 
+      {:ok, _date} = @date
+
       assert %{
                "meal" => %{
                  "calories" => 20,
-                 "date" => "2001-05-02",
+                 "date" => _date,
                  "description" => "Banana",
                  "id" => ^id,
                  "user_id" => ^user_id
@@ -158,7 +168,7 @@ defmodule Exmeal.MealsControllerTest do
         |> get(Routes.meals_path(conn, :update, id))
         |> json_response(:not_found)
 
-      assert %{"message" => "Meal not found"} = response
+      assert %{"message" => "Meal not found!"} = response
     end
   end
 end
