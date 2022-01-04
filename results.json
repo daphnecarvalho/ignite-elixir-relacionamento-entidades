@@ -19,13 +19,6 @@
       "test": "test changeset/1 when all params are valid, returns a valid changeset"
     },
     {
-      "describe": "changeset/1",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meal_test.exs",
-      "line": 17,
-      "module": "Elixir.Exmeal.MealTest",
-      "test": "test changeset/1 when all params are valid, returns a valid changeset"
-    },
-    {
       "describe": "Delete user",
       "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/users/delete_test.exs",
       "line": 25,
@@ -38,6 +31,13 @@
       "line": 9,
       "module": "Elixir.Exmeal.Users.DeleteTest",
       "test": "test Delete user when a valid id is given, returns the user"
+    },
+    {
+      "describe": "changeset/1",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meal_test.exs",
+      "line": 17,
+      "module": "Elixir.Exmeal.MealTest",
+      "test": "test changeset/1 when all params are valid, returns a valid changeset"
     },
     {
       "describe": "Get Meal",
@@ -54,20 +54,6 @@
       "test": "test Get Meal when a valid id is given, returns the meal"
     },
     {
-      "describe": "Update Meal",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meals/update_test.exs",
-      "line": 38,
-      "module": "Elixir.Exmeal.Meals.UpdateTest",
-      "test": "test Update Meal when an invalid id is given, returns an error"
-    },
-    {
-      "describe": "Update Meal",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meals/update_test.exs",
-      "line": 15,
-      "module": "Elixir.Exmeal.Meals.UpdateTest",
-      "test": "test Update Meal when a valid id is given, returns the meal"
-    },
-    {
       "describe": "Delete Meal",
       "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meals/delete_test.exs",
       "line": 38,
@@ -80,6 +66,20 @@
       "line": 15,
       "module": "Elixir.Exmeal.Meals.DeleteTest",
       "test": "test Delete Meal when a valid id is given, returns the meal"
+    },
+    {
+      "describe": "Update Meal",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meals/update_test.exs",
+      "line": 38,
+      "module": "Elixir.Exmeal.Meals.UpdateTest",
+      "test": "test Update Meal when an invalid id is given, returns an error"
+    },
+    {
+      "describe": "Update Meal",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal/meals/update_test.exs",
+      "line": 15,
+      "module": "Elixir.Exmeal.Meals.UpdateTest",
+      "test": "test Update Meal when a valid id is given, returns the meal"
     },
     {
       "describe": "Get User",
@@ -110,18 +110,81 @@
       "test": "test Update Meal when a valid id is given, returns the meal"
     },
     {
-      "describe": "update/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 123,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test update/2 when not exist id, return an error"
-    },
-    {
       "describe": "get/2",
       "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
       "line": 163,
       "module": "Elixir.Exmeal.MealsControllerTest",
       "test": "test get/2 when id not exist, return an error"
+    },
+    {
+      "describe": "delete/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 81,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test delete/2 when id not exist, return an error"
+    },
+    {
+      "describe": "delete/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 64,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test delete/2 when id exist, delete the meal"
+    },
+    {
+      "describe": "create/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 43,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test create/2 when there are invalid params, returns an error"
+    },
+    {
+      "describe": "get/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
+      "line": 140,
+      "module": "Elixir.Exmeal.UsersControllerTest",
+      "test": "test get/2 when id not exist, return an error"
+    },
+    {
+      "describe": "update/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 96,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test update/2 when id exist, update the meal"
+    },
+    {
+      "describe": "delete/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
+      "line": 64,
+      "module": "Elixir.Exmeal.UsersControllerTest",
+      "test": "test delete/2 when id not exist, return an error"
+    },
+    {
+      "describe": "delete/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
+      "line": 51,
+      "module": "Elixir.Exmeal.UsersControllerTest",
+      "test": "test delete/2 when id exist, delete the user"
+    },
+    {
+      "describe": "create/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
+      "line": 30,
+      "module": "Elixir.Exmeal.UsersControllerTest",
+      "test": "test create/2 when there are invalid params, returns an error"
+    },
+    {
+      "describe": "update/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
+      "line": 79,
+      "module": "Elixir.Exmeal.UsersControllerTest",
+      "test": "test update/2 when id exist, update the user"
+    },
+    {
+      "describe": "update/2",
+      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 123,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test update/2 when not exist id, return an error"
     },
     {
       "describe": "create/2",
@@ -147,72 +210,9 @@
     {
       "describe": "get/2",
       "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
-      "line": 140,
-      "module": "Elixir.Exmeal.UsersControllerTest",
-      "test": "test get/2 when id not exist, return an error"
-    },
-    {
-      "describe": "create/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 43,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test create/2 when there are invalid params, returns an error"
-    },
-    {
-      "describe": "get/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
       "line": 118,
       "module": "Elixir.Exmeal.UsersControllerTest",
       "test": "test get/2 when id exist, return the meal"
-    },
-    {
-      "describe": "delete/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 81,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test delete/2 when id not exist, return an error"
-    },
-    {
-      "describe": "update/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 96,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test update/2 when id exist, update the meal"
-    },
-    {
-      "describe": "create/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
-      "line": 30,
-      "module": "Elixir.Exmeal.UsersControllerTest",
-      "test": "test create/2 when there are invalid params, returns an error"
-    },
-    {
-      "describe": "delete/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
-      "line": 64,
-      "module": "Elixir.Exmeal.UsersControllerTest",
-      "test": "test delete/2 when id not exist, return an error"
-    },
-    {
-      "describe": "update/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
-      "line": 79,
-      "module": "Elixir.Exmeal.UsersControllerTest",
-      "test": "test update/2 when id exist, update the user"
-    },
-    {
-      "describe": "delete/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 64,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test delete/2 when id exist, delete the meal"
-    },
-    {
-      "describe": "delete/2",
-      "file": "/home/daphnecarvalho/ignite-trilha-elixir-2021-relacionamento-entidades/test/exmeal_web/controller/users_controller_test.exs",
-      "line": 51,
-      "module": "Elixir.Exmeal.UsersControllerTest",
-      "test": "test delete/2 when id exist, delete the user"
     },
     {
       "describe": null,
