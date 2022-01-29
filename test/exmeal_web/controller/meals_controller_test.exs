@@ -21,7 +21,7 @@ defmodule Exmeal.MealsControllerTest do
 
       response =
         conn
-        |> post(Routes.meals_path(conn, :create, params))
+        |> post(Routes.meals_path(conn, :create), params)
         |> json_response(:created)
 
       %{"meal" => %{"id" => id}} = response
